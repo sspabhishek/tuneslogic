@@ -19,8 +19,8 @@ export function CTASection() {
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90" onClick={() => window.location.href = "mailto:your-email@example.com"}>
               {"Get in Touch"}
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() =>document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
-              View Our Services
+            <Button size="lg" variant="outline" className="border-white text-white bg-primary/10 hover:bg-white/10 dark:bg-black dark:hover:bg-primary" onClick={() =>document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
+              {"View Our Services"}
             </Button>
           </div>
         </motion.div>
