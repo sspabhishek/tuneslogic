@@ -8,24 +8,16 @@ const companyLinks = [
 ];
 
 const servicesLinks = [
-  { label: "Digital Marketing", href: "#services" },
   { label: "Web Development", href: "#services" },
   { label: "App Development", href: "#services" },
   { label: "Cloud Solutions", href: "#services" },
-  { label: "Cybersecurity", href: "#services" },
 ];
 
-const resourcesLinks = [
-  { label: "Blog", href: "#blog" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Webinars", href: "#webinars" },
-  { label: "Free Resources", href: "#resources" },
-];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#privacy" },
-  { label: "Terms of Service", href: "#terms" },
-  { label: "Cookie Policy", href: "#cookies" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
 ];
 
 export function Footer() {
@@ -34,41 +26,24 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <svg 
-                className="h-8 w-8 text-primary" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  d="M12 2L2 7L12 12L22 7L12 2Z" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-                <path 
-                  d="M2 17L12 22L22 17" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-                <path 
-                  d="M2 12L12 17L22 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-xl font-bold tracking-tight">Tuneslogic</span>
+          <div className="h-8 w-auto relative">
+              {/* Light mode */}
+              <img
+                src="/assets/images/light_logo.png"
+                alt="Tuneslogic Logo"
+                className="h-full w-auto object-contain dark:hidden"
+              />
+              {/* Dark mode */}
+              <img
+                src="/assets/images/dark_logo.png"
+                alt="Tuneslogic Logo"
+                className="h-full w-auto object-contain hidden dark:block"
+              />
             </div>
             <p className="text-muted-foreground max-w-xs mb-6">
-              Transforming businesses with innovative digital marketing and technology solutions.
+              Transforming businesses with innovative technology solutions.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <span className="sr-only">Twitter</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -93,7 +68,7 @@ export function Footer() {
                   <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
           
           <div>
@@ -126,23 +101,20 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-          
+          </div>          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              {resourcesLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <a 
-                    href={link.href} 
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a 
+                  href="mailto:support@tuneslogic.com"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  support@tuneslogic.com
+                </a>
+              </li>
             </ul>
-          </div>
+          </div> 
         </div>
         
         <div className="border-t border-border mt-12 pt-8">

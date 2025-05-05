@@ -51,9 +51,9 @@ export function HeroSection() {
                 </svg>
               </Button>
               
-              <Button size="lg" variant="outline">
+              {/* <Button size="lg" variant="outline">
                 Case Studies
-              </Button>
+              </Button> */}
             </motion.div>
             
             <motion.div 

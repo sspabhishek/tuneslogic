@@ -13,7 +13,7 @@ export function AboutSection() {
           >
             <h2 className="section-heading">About Tuneslogic</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded in 2015, Tuneslogic has been at the forefront of digital transformation, 
+              Founded in 2025, Tuneslogic has been at the forefront of digital transformation, 
               helping businesses of all sizes achieve their goals through innovative marketing 
               and technology solutions.
             </p>

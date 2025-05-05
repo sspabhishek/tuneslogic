@@ -9,7 +9,7 @@ const navItems = [
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Testimonials", href: "#testimonials" },
+  // { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -61,38 +61,25 @@ export function Header() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <svg 
-              className="h-8 w-8 text-primary" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                d="M12 2L2 7L12 12L22 7L12 2Z" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="h-8 w-auto relative">
+              {/* Light mode */}
+              <img
+                src="/assets/images/light_logo.png"
+                alt="Tuneslogic Logo"
+                className="h-full w-auto object-contain dark:hidden"
               />
-              <path 
-                d="M2 17L12 22L22 17" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+              {/* Dark mode */}
+              <img
+                src="/assets/images/dark_logo.png"
+                alt="Tuneslogic Logo"
+                className="h-full w-auto object-contain hidden dark:block"
               />
-              <path 
-                d="M2 12L12 17L22 12" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="text-xl font-bold tracking-tight">Tuneslogic</span>
+            </div>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <a
@@ -109,9 +96,9 @@ export function Header() {
             ))}
           </nav>
 
+          {/* Right Icons */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            {/* <Button className="hidden md:flex">Get Started</Button> */}
             <Button
               variant="ghost"
               size="icon"
@@ -125,40 +112,24 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm md:hidden">
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center mb-8">
-              <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
-                <svg 
-                  className="h-8 w-8 text-primary" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path 
-                    d="M12 2L2 7L12 12L22 7L12 2Z" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
+              <Link href="/" className="flex items-center space-x-3" onClick={closeMenu}>
+                <div className="h-8 w-auto relative">
+                  <img
+                    src="/assets/images/light_logo.png"
+                    alt="Tuneslogic Logo"
+                    className="h-full w-auto object-contain dark:hidden"
                   />
-                  <path 
-                    d="M2 17L12 22L22 17" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
+                  <img
+                    src="/assets/images/dark_logo.png"
+                    alt="Tuneslogic Logo"
+                    className="h-full w-auto object-contain hidden dark:block"
                   />
-                  <path 
-                    d="M2 12L12 17L22 12" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                </div>
                 <span className="text-xl font-bold">Tuneslogic</span>
               </Link>
               <Button variant="ghost" size="icon" onClick={closeMenu}>
@@ -171,12 +142,12 @@ export function Header() {
                 <a
                   key={item.href}
                   href={item.href}
+                  onClick={closeMenu}
                   className={`text-lg font-medium py-2 transition-colors ${
                     activeSection === item.href.substring(1)
                       ? "text-primary"
                       : "text-foreground/80 hover:text-primary"
                   }`}
-                  onClick={closeMenu}
                 >
                   {item.label}
                 </a>
@@ -189,3 +160,4 @@ export function Header() {
     </header>
   );
 }
+
