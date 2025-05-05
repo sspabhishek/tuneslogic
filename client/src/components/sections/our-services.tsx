@@ -12,8 +12,7 @@ export function ServicesSection() {
       id: 1,
       title: "DevOps",
       category: "devops",
-      image:
-        "https://img.freepik.com/free-vector/gradient-devops-illustration_23-2149371586.jpg?t=st=1746429404~exp=1746433004~hmac=fbac88bf0819e8c5625928b4602f933aba6b96edd85029ddd37182fd7f86148f&w=1380",
+      image: {src : "/assets/images/devops.jpg"},
       description:
         "Streamline delivery with CI/CD, containerization, and infrastructure as code.",
     },
@@ -21,8 +20,7 @@ export function ServicesSection() {
       id: 2,
       title: "Mobile Development",
       category: "mobile",
-      image:
-        "https://img.freepik.com/free-photo/smartphone-with-user-interface-concept_52683-104212.jpg?t=st=1746429475~exp=1746433075~hmac=a655846faec0d6f0bb72a9976262aeb5d6c23dfc7ce68ada16992c2b3b60a79b&w=1380 ",
+      image: {src : "/assets/images/Mobile Development.jpg"},
       description:
         "Custom iOS/Android apps using modern frameworks and native UX.",
     },
