@@ -30,8 +30,7 @@ export function ServicesSection() {
       id: 3,
       title: "Web Development / E-commerce",
       category: "web",
-      image:
-        "https://images.unsplash.com/photo-1674027392887-751d6396b710?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: {src : "/assets/images/E-commerce.jpg"},
       description:
         "Responsive websites and e-commerce platforms tailored to your brand.",
     },
@@ -39,8 +38,7 @@ export function ServicesSection() {
       id: 4,
       title: "AI Integration",
       category: "ai",
-      image:
-        "https://img.freepik.com/free-photo/robot-handshake-human-background-futuristic-digital-age_53876-129770.jpg?t=st=1746429543~exp=1746433143~hmac=2ad5bd8e2e2775aaff5799265395414be0c6b8a533882a5c6bafea53ab2345bc&w=1380",
+      image: {src : "/assets/images/ai.jpg"},
       description:
         "Empower products with machine learning, NLP, and automation.",
     },
@@ -48,8 +46,7 @@ export function ServicesSection() {
       id: 5,
       title: "Cloud Services",
       category: "cloud",
-      image:
-        "https://img.freepik.com/free-vector/cloud-computing-polygonal-wireframe-technology-concept_1017-29594.jpg?t=st=1746429625~exp=1746433225~hmac=87edc046286e2f2dbde3b67746b646d232d31e9ae5791a7f977b6ab685f3c148&w=1380",
+      image: {src : "/assets/images/cloud.jpg"},
       description:
         "Secure, scalable cloud solutions with AWS, Azure, or GCP.",
     },
@@ -57,8 +54,7 @@ export function ServicesSection() {
       id: 6,
       title: "Infrastructure Automation",
       category: "infra",
-      image:
-        "https://img.freepik.com/free-photo/photovoltaics-factory-technician-monitors-system-performance-tablet-closeup_482257-118082.jpg?t=st=1746429712~exp=1746433312~hmac=1165f2e8739516aa91804a0939a0fb95e3aa4d1cb284653b50662c3b1678886c&w=1800",
+      image: {src : "/assets/images/Infrastructure.jpg"},
       description:
         "Automated provisioning, monitoring, and scaling with modern tools.",
     },
@@ -135,8 +131,7 @@ export function ServicesSection() {
             >
               <div className="relative overflow-hidden aspect-[16/9]">
                 <img
-                  src={s.image}
-                  alt={s.title}
+                  src={typeof s.image === "string" ? s.image : s.image.src}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <Badge variant="secondary" className="absolute top-2 left-2 z-10">
